@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# Mão na Obra
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+**Português** · [English](README.en.md)
 
-## Available Scripts
+Landing page criada para apresentar os serviços de um pedreiro em Portugal. A proposta para a próxima versão é ajudar quem procura um profissional a perceber rapidamente que trabalhos ele faz, onde atende e como pedir um orçamento.
 
-In the project directory, you can run:
+**Estado do repositório:** protótipo em React e TypeScript iniciado em 2022. A versão ASP.NET Core e a publicação estão em planejamento.
 
-### `npm start`
+## O que a nova página deve resolver
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Entender os serviços.** Apresentar os trabalhos que o profissional aceita, em português de Portugal, com texto claro e navegação simples no telemóvel.
+- **Conferir a zona de atendimento.** Mostrar a localidade e as zonas confirmadas pelo profissional.
+- **Ver trabalhos reais.** Incluir fotografias autorizadas, com contexto sobre o serviço realizado e texto alternativo.
+- **Pedir orçamento.** Oferecer um contacto comercial confirmado, com um percurso curto para dizer a localidade e o tipo de trabalho.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Arquitetura proposta
 
-### `npm test`
+```mermaid
+flowchart LR
+    V["Visitante no telemóvel"] --> R["ASP.NET Core · Razor Pages"]
+    R --> C["Serviços, zonas e galeria"]
+    R --> O["Pedido de orçamento"]
+    O --> W["Canal de contacto confirmado"]
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+| Escolha | Motivo |
+| --- | --- |
+| **C# e ASP.NET Core Razor Pages em .NET 10 LTS** | A página pode entregar HTML renderizado no servidor. A mesma aplicação cuida das páginas de serviços e da validação de um eventual pedido de orçamento. [Ciclo de suporte do .NET](https://learn.microsoft.com/en-us/lifecycle/products/microsoft-net-and-net-core) |
+| **HTML e CSS responsivos** | O percurso principal é ler, ver trabalhos e contactar. Navegação por teclado, imagens com dimensões definidas e um layout que funciona no telemóvel fazem parte da entrega. |
+| **Contacto direto na primeira versão** | Um contacto aprovado permite pedir orçamento sem criar contas nem manter um cadastro de clientes. Se for útil, um formulário pode preparar uma mensagem que a pessoa confere antes de enviar. |
+| **GitHub Actions e Azure App Service** | O pipeline pode verificar o build, testar as rotas e publicar a aplicação .NET. O ambiente de demonstração pode usar o endereço da Azure enquanto domínio e custo são avaliados. [Guia de deploy](https://learn.microsoft.com/en-us/azure/app-service/quickstart-dotnetcore) |
 
-### `npm run build`
+## Critérios para publicar
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Confirmar com o profissional a zona de atendimento, a lista de serviços, o nome comercial e o canal de contacto.
+2. Conferir a página no telemóvel e por teclado. Validar links, imagens, texto em português de Portugal e o percurso de pedido de orçamento.
+3. Verificar build, rotas, metadados e HTTPS na versão publicada.
+4. Documentar o código, a decisão pela nova stack e a URL real. Usar capturas da versão publicada para apresentar o projeto no portfólio.
