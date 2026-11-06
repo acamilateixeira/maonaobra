@@ -2,9 +2,22 @@
 
 **Português** · [English](README.en.md)
 
-Landing page criada para apresentar os serviços de um pedreiro em Portugal. A proposta para a próxima versão é ajudar quem procura um profissional a perceber rapidamente que trabalhos ele faz, onde atende e como pedir um orçamento.
+**Uma montra para quem precisa de encontrar um pedreiro e pedir um orçamento em Portugal.**
+
+Criei o protótipo para o meu tio, que trabalha na construção em Portugal. A nova página parte das perguntas que um cliente precisa de esclarecer antes do primeiro contacto: que serviços presta, em que zona trabalha e como pode pedir orçamento.
 
 **Estado do repositório:** protótipo em React e TypeScript iniciado em 2022. A versão ASP.NET Core e a publicação estão em planejamento.
+
+## Experimentar o protótipo React
+
+Com Node.js 22 e npm, instale as dependências e inicie o servidor de desenvolvimento.
+
+```bash
+npm ci
+npm start
+```
+
+Abra `http://localhost:3000`. O comando `npm run build` prepara o build do protótipo. Os comandos da versão .NET serão acrescentados quando o primeiro fluxo estiver implementado.
 
 ## O que a nova página deve resolver
 
@@ -36,3 +49,7 @@ flowchart LR
 2. Conferir a página no telemóvel e por teclado. Validar links, imagens, texto em português de Portugal e o percurso de pedido de orçamento.
 3. Verificar build, rotas, metadados e HTTPS na versão publicada.
 4. Documentar o código, a decisão pela nova stack e a URL real. Usar capturas da versão publicada para apresentar o projeto no portfólio.
+
+## Postman, Insomnia e verificação
+
+Inicie o protótipo e importe a [coleção Mão na Obra](docs/postman.collection.json) no Postman ou Insomnia para verificar a resposta HTML. Rode `npm run build` e abra a página no navegador. Confira se a rota inicial carrega e se a navegação por teclado funciona nos elementos já presentes.

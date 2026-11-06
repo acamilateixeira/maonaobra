@@ -2,9 +2,22 @@
 
 [Português](README.md) · **English**
 
-A landing page originally created to present the services of a builder in Portugal. The next version is intended to help prospective customers understand what work he takes on, where he works, and how to request a quote.
+**A landing page for people looking for a builder and a quote in Portugal.**
+
+I created the prototype for my uncle, who works in construction in Portugal. The redesign starts with the questions a customer needs answered before making contact: what he does, where he works, and how to request a quote.
 
 **Repository status:** a React and TypeScript prototype started in 2022. The ASP.NET Core version and deployment are planned.
+
+## Run the React prototype
+
+With Node.js 22 and npm, install the dependencies and start the development server.
+
+```bash
+npm ci
+npm start
+```
+
+Open `http://localhost:3000`. Run `npm run build` to build the prototype. The .NET setup will be documented with the first working workflow.
 
 ## What the new page should do
 
@@ -36,3 +49,7 @@ flowchart LR
 2. Review the mobile and keyboard experience. Verify links, images, European Portuguese copy, and the quote journey.
 3. Verify the build, routes, metadata, and HTTPS on the published site.
 4. Document the implementation, the reasons for the stack choice, and the live URL. Use screenshots from the published site in the portfolio.
+
+## Postman, Insomnia, and verification
+
+Start the prototype and import the [Mão na Obra collection](docs/postman.collection.json) into Postman or Insomnia to check the HTML response. Run `npm run build` and open the page in a browser. Check that the home route loads and that keyboard navigation works on the existing controls.
