@@ -2,6 +2,8 @@
 
 [Português](README.md) · **English**
 
+[![Prototype CI](https://github.com/acamilateixeira/maonaobra/actions/workflows/ci.yml/badge.svg)](https://github.com/acamilateixeira/maonaobra/actions/workflows/ci.yml)
+
 **A landing page for people looking for a builder and a quote in Portugal.**
 
 I created the prototype for my uncle, who works in construction in Portugal. The redesign starts with the questions a customer needs answered before making contact: what he does, where he works, and how to request a quote.

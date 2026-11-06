@@ -2,6 +2,8 @@
 
 **Português** · [English](README.en.md)
 
+[![Prototype CI](https://github.com/acamilateixeira/maonaobra/actions/workflows/ci.yml/badge.svg)](https://github.com/acamilateixeira/maonaobra/actions/workflows/ci.yml)
+
 **Uma montra para quem precisa de encontrar um pedreiro e pedir um orçamento em Portugal.**
 
 Criei o protótipo para o meu tio, que trabalha na construção em Portugal. A nova página parte das perguntas que um cliente precisa de esclarecer antes do primeiro contacto: que serviços presta, em que zona trabalha e como pode pedir orçamento.

@@ -1,0 +1,27 @@
+name: Prototype CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Check that the prototype serves HTML
+        run: |
+          python3 -m http.server 8000 --bind 127.0.0.1 --directory build &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+          curl --fail --silent --retry 5 --retry-connrefused http://127.0.0.1:8000/ | grep -i '<!doctype html>'
